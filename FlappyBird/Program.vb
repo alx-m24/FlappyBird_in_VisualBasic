@@ -38,7 +38,6 @@ Module Program
 
     Sub Main(args As String())
         Console.WriteLine("Welcome.")
-start:
         Console.Write("Please enter the world gap size(Recommended: around 4): ")
         halfGapSize = Console.ReadLine() / 2
         Console.Write("Please enter the number of pipes(Recommended: around 2): ")
@@ -80,11 +79,8 @@ start:
 
         Console.Clear()
         Console.WriteLine("Game Over")
-        Console.Write("Restart?(y/n): ")
-        input = Console.ReadLine()
-        If (input = "y") Then
-            GoTo start
-        End If
+        Console.WriteLine("Press any key to continue")
+        keyThread.Join()
     End Sub
 
     Function inBounds() As Boolean
